@@ -28,7 +28,14 @@ public class Book {
         available = true;
         System.out.println("You have returned: " + title);
     }
+    public String getTitle() {
+        return title;
+    }
 
+    // Allows the Library to check if it can be printed as "available"
+    public boolean isAvailable() {
+        return available;
+    }
 
 }
 

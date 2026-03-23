@@ -7,7 +7,7 @@ public class Main {
 
         Reader reader1 = new Reader("Anna", "312", 1001);
         Reader reader2 = new Reader("Sonya", "123", 1002);
-
+//task 2
         System.out.println("--- Initial State ---");
         reader1.printData();
 
@@ -24,14 +24,14 @@ public class Main {
         book2.printInfo();
         book3.printInfo();
 
-        System.out.println("\n--- Initial State for Marek ---");
+        System.out.println("\n--- Initial State for Sonya ---");
         reader2.printData();
 
         System.out.println("\n--- Sonya borrows 1 book ---");
         reader2.increaseBorrowedCount();
         reader2.printData();
 
-
+    //Task 1
 
         System.out.println("\n--- Testing Borrowing ---");
         book1.borrow();
@@ -41,5 +41,28 @@ public class Main {
         System.out.println("\n--- Testing Returning ---");
         book3.returnBook();
         book3.printInfo();
+
+        //task 3
+        Library myLibrary = new Library(5);
+
+        Book b1 = new Book("The Witcher", "Sapkowski", 300, true);
+        Book b2 = new Book("Solaris", "Lem", 200, true);
+        Book b3 = new Book("Java Basics", "Unknown", 450, false); // Already borrowed
+
+        myLibrary.addBook(b1);
+        myLibrary.addBook(b2);
+        myLibrary.addBook(b3);
+
+        System.out.println("--- Available Books in Library ---");
+        myLibrary.printAvailableBooks();
+
+        int availableCount = myLibrary.countAvailableBooks();
+        System.out.println("\nTotal available: " + availableCount);
+
+        System.out.println("\n--- Searching for 'Solaris' ---");
+        myLibrary.findBookByTitle("Solaris");
+
+        System.out.println("\n--- Searching for a non-existent book ---");
+        myLibrary.findBookByTitle("Harry Potter");
     }
 }
